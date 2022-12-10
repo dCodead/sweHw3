@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="\res\FishFinger.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h1><strong>{{data.title}}</strong></h1>
+        <h2 class="headers"><strong>{{data.subtitle}}</strong></h2>
+        <p><strong>Makes</strong> {{data.make}}  
+            <strong>Cooks In</strong>
+             {{data.cook_time}} 
+             <strong>Difficulty</strong> {{data.difficulty}}
+        </p>
+        <hr>
+        <h2 class="headers">INGREDIENTS</h2>
+    <div class="flexbox">
+        <img alt="Delicious Jumbo Fish Fingers" src="/res/{{data.image}}">
+
+        <ul id ="ingredients">
+            {% for i in data.ingredients %}
+
+            <li class="fish_element">{{i.item}}</li>
+            {% endfor %}
+
+            <!-- <li class="fish_element">2 large free-range eggs</li>
+            <li class="fish_element">2 <abbr title="teaspoons">tsp</abbr> sweet smoked paprika</li>
+            <li class="fish_element">250 g wholemeal bread</li>
+            <li class="fish_element">30 g Cheddar cheese</li>
+            <li class="fish_element">extra virgin olive oil</li> -->
+        </ul>
+    </div>
+        <hr>
+        <h2 class="headers">METHOD</h2>
+    <div class="flexbox">
+        <ol>
+            {% for i in data.method %}
+            <li>{{i.step}}</li>
+             {% endfor %}
+
+        </ol>
+
+    </div>
+        <hr>
+
+        <h2 class="headers">User Comments</h2>
+        <button id="see_comments">See Comments</button>
+        <div id="comments_container">
+        <fieldset>
+            <legend>Enter a comment:</legend>
+            <form id="comments_form">
+            <h4>Name:</h4>
+            <input id="author" name="comment_author" type="text"> 
+            <h4>Comment:</h4>
+            <textarea id="comment" name="comment_txt" rows="5" column="3" width="100%" placeholder="Enter your comment here..."></textarea>
+            <br>
+            <p><img id="comment_submit_btn" alt="'+' Sign" width="50px" src="/res/PlusSign.jpg"></p>
+            </form>
+        </fieldset>
+
+        <h3>All comments:</h3>
+        <h3>Users Comment:</h3>
+
+        <form id = "comments">
+        {% for comment in comments %}
+            <div class="comment">
+                <p> {{comment.comment}} </p>
+                <p> {{comment.author}} </p>
+            </div>
+        {% endfor %}
+            <!-- <div class="comment">
+                
+            </div>
+            <div class="comment">
+                <p>
+                    This is a very fun recipe to follow.
+                </p>
+                <p>
+                    - Ahmed Z.
+                </p>
+            </div> -->
+        </form>
+    </div>
+        <hr>
+
+        <h2 class="headers">Sign-up to receive new recipes</h2>
+        <div class="fields_div">
+
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label><strong>Name:</strong></label>
+            <input type="text"> 
+            <p></p>
+            <label><strong>Email:</strong></label>
+            <input type="email" placeholder="xxxx@domain.com"> 
+        </fieldset>
+<br>
+
+        <fieldset>
+            <legend>Types of recipes</legend>
+            <label>Breakfast:</label>
+            <input type="radio" name="type_of_recipe"> 
+            <label>Lunch:</label>
+            <input type="radio" name="type_of_recipe"> 
+            <label>Dinner:</label>
+            <input type="radio" name="type_of_recipe"> 
+        </fieldset>
+<br>
+        <button>Sign Up</button>
+        </div>
+        <hr>
+        <h2 class="headers">LINKS</h2>
+        <a href="https://www.google.com/search?q=fish+fingers+recipe&start=10">Search for other fish fingers recipes</a>
+
+        <script type="text/javascript" src="\frontendJS.js"></script>
+    </body>
+</html>

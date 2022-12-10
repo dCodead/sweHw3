@@ -1,0 +1,66 @@
+@media all and(max-width: 600){
+    p{
+        font-size: 12px;
+        color:pink;
+
+    }
+}
+@media all and(min-width: 900){
+    p{
+        font-size: 12px;
+        color:pink;
+
+    }
+}
+@media all and(min-width: 1024){
+    p{
+        font-size: 12px;
+        background-color: black;
+        color:pink;
+    }
+
+}
+#background{
+    position:absolute;
+    display: grid;
+    max-width: 100%;
+    max-height: 100%;
+}
+p{
+    border: solid;
+    border-color: #73ad21;
+    border-radius: 25px;
+    margin: 5vw 30vw;
+    color: #a4a400;
+    height: 6vw;
+    background-color: #f0f0f0;
+    justify-content: center;
+    text-align: center;
+    padding-top: 3vw;
+    padding-bottom: 3vw;
+}
+.menu{
+    display: flex;
+    flex-direction: row;
+    max-width: 30vw;
+    column-rule: 5px solid #a4a400;
+    justify-self:center;
+
+}
+img{
+    position: relative;
+    max-width: 30vw;
+    max-height: 15vw;
+    border-radius: 90%;
+    margin: 1vw;
+    
+}
+.responsive{
+    column-rule-color: #a4a400;
+    column-rule: solid 2px;
+}
+
+body{
+    background-image:url("./silverware.jpg");
+    background-repeat: repeat-x(x);
+}
